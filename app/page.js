@@ -481,14 +481,14 @@ export default function Home() {
 
   </div>
 
-  <div className="family-note-bottom">
+  {/* <div className="family-note-bottom">
     <span>“</span>
     <em>
       We came to college looking for a future. Somewhere along the way,
       we found a family. ❤️🏡
     </em>
     <span>”</span>
-  </div>
+  </div> */}
 </section>          
 
         <section className="family-signature">
