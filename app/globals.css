@@ -224,3 +224,8 @@
 @media (prefers-reduced-motion:reduce){
   
 }
+
+
+/* Additional faculty portrait treatments */
+.faculty-photo-pruthvi img,
+.faculty-photo-jahnavi img { object-position: center 20%; }

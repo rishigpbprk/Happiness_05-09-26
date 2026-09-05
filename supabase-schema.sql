@@ -63,7 +63,9 @@ values
 ('Mrs. Pradheepa J', 'pradheepaise@skit.org.in', 'Information Science & Engineering', 'Assistant Professor', 'Thank you for every lesson, every correction, and every encouragement.'),
 ('Mrs. Yuvashri C', 'yuvashricise@skit.org.in', 'Information Science & Engineering', 'Assistant Professor', 'Thank you for making learning feel possible, meaningful, and memorable.'),
 ('Mr. Sachin S Doddamani', 'sachindoddamaniise@skit.org.in', 'Information Science & Engineering', 'Assistant Professor', 'Thank you for sharing your knowledge and helping us grow with confidence.'),
-('Mr. Kiran P Kumar', 'pamidikiran.ise@skit.org.in', 'Information Science & Engineering', 'Assistant Professor', 'Thank you for being a mentor whose lessons stay with us beyond the classroom.')
+('Mr. Kiran P Kumar', 'pamidikiran.ise@skit.org.in', 'Information Science & Engineering', 'Assistant Professor', 'Thank you for being a mentor whose lessons stay with us beyond the classroom.'),
+('Mrs. Pruthvi Sharath', 'pruthvis.ise@skit.org.in', 'Information Science & Engineering', 'Lab Instructor', 'Thank you for the patience, care, and encouragement you bring to every learning moment.'),
+('Ms. Jahnavi M Gowda', 'jahnavim.ise@skit.org.in', 'Information Science & Engineering', 'Lab Instructor', 'Thank you for making every practical session a little clearer, warmer, and more memorable.')
 on conflict (email) do update set name = excluded.name, designation = excluded.designation, department = excluded.department, personal_message = excluded.personal_message;
 
 

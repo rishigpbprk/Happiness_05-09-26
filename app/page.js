@@ -9,6 +9,8 @@ const photoByEmail = {
   'yuvashricise@skit.org.in': '/assets/faculty/yuvashri-c.png',
   'sachindoddamaniise@skit.org.in': '/assets/faculty/sachin-s-doddamani.png',
   'pamidikiran.ise@skit.org.in': '/assets/faculty/kiran-p-kumar.png',
+  'pruthvis.ise@skit.org.in': '/assets/faculty/pruthvi-sharath.jpeg',
+  'jahnavim.ise@skit.org.in': '/assets/faculty/jahnavi-m-gowda.jpeg',
 };
 
 const fallbackFaculty = [
@@ -17,6 +19,8 @@ const fallbackFaculty = [
   { name: 'Mrs. Yuvashri C', email: 'yuvashricise@skit.org.in', designation: 'Assistant Professor', department: 'Information Science & Engineering', likes: 0, photo_path: photoByEmail['yuvashricise@skit.org.in'] },
   { name: 'Mr. Sachin S Doddamani', email: 'sachindoddamaniise@skit.org.in', designation: 'Assistant Professor', department: 'Information Science & Engineering', likes: 0, photo_path: photoByEmail['sachindoddamaniise@skit.org.in'] },
   { name: 'Mr. Kiran P Kumar', email: 'pamidikiran.ise@skit.org.in', designation: 'Assistant Professor', department: 'Information Science & Engineering', likes: 0, photo_path: photoByEmail['pamidikiran.ise@skit.org.in'] },
+  { name: 'Mrs. Pruthvi Sharath', email: 'pruthvis.ise@skit.org.in', designation: 'Lab Instructor', department: 'Information Science & Engineering', likes: 0, photo_path: photoByEmail['pruthvis.ise@skit.org.in'] },
+  { name: 'Ms. Jahnavi M Gowda', email: 'jahnavim.ise@skit.org.in', designation: 'Lab Instructor', department: 'Information Science & Engineering', likes: 0, photo_path: photoByEmail['jahnavim.ise@skit.org.in'] },
 ];
 
 function withLocalPhoto(f) {
@@ -342,10 +346,10 @@ export default function Home() {
       {loading && <div className="notice">Loading the SKIT appreciation wall…</div>}
       {notice && <div className="notice">{notice}</div>}
       <div className="cards">{faculty.map((f, i) => <article className="faculty-card" key={f.id || f.email} onClick={() => { setSelected(f); setScreen('profile'); }}>
-        <div className={`photo-placeholder ${f.email === 'raginikrishnaise@skit.org.in' ? 'faculty-photo-ragini' : f.email === 'pradheepaise@skit.org.in' ? 'faculty-photo-pradheepa' : f.email === 'yuvashricise@skit.org.in' ? 'faculty-photo-yuvashri' : f.email === 'sachindoddamaniise@skit.org.in' ? 'faculty-photo-sachin' : 'faculty-photo-kiran'}`}>{f.photo_path ? <><img src={f.photo_path} alt={f.name} /><span className="photo-wash" /><span className="view-profile">View tribute ↗</span></> : <><div className="initials">{initials(f.name)}</div><span>PHOTO COMING SOON</span></>}</div>
+        <div className={`photo-placeholder ${f.email === 'raginikrishnaise@skit.org.in' ? 'faculty-photo-ragini' : f.email === 'pradheepaise@skit.org.in' ? 'faculty-photo-pradheepa' : f.email === 'yuvashricise@skit.org.in' ? 'faculty-photo-yuvashri' : f.email === 'sachindoddamaniise@skit.org.in' ? 'faculty-photo-sachin' : f.email === 'pamidikiran.ise@skit.org.in' ? 'faculty-photo-kiran' : f.email === 'pruthvis.ise@skit.org.in' ? 'faculty-photo-pruthvi' : 'faculty-photo-jahnavi'}`}>{f.photo_path ? <><img src={f.photo_path} alt={f.name} /><span className="photo-wash" /><span className="view-profile">View tribute ↗</span></> : <><div className="initials">{initials(f.name)}</div><span>PHOTO COMING SOON</span></>}</div>
         <div className="card-body"><div className="num">0{i + 1}</div><h3>{f.name}</h3><p>{f.designation}</p><div className="card-bottom"><span>ISE</span><button onClick={(e) => { e.stopPropagation(); toggleLike(f); }} className={myLikes.has(f.id) ? 'heart liked' : 'heart'}>♥ {likes[f.id] || 0}</button></div></div>
       </article>)}</div>
-      <div className="wall"><div className="eyebrow">ISE APPRECIATION WALL</div><h3>Five mentors.<br/><em>Countless little impacts.</em></h3><p>Open a profile to celebrate a mentor and leave a message from the SKIT family.</p></div>
+      <div className="wall"><div className="eyebrow">ISE APPRECIATION WALL</div><h3>Seven mentors.<br/><em>Countless little impacts.</em></h3><p>Open a profile to celebrate a mentor and leave a message from the SKIT family.</p></div>
     </section>}
 
     {screen === 'profile' && selected && <section className="profile-section">
@@ -362,30 +366,14 @@ export default function Home() {
         </div>
       </div>}
       <div className="profile-grid">
-        <div className={`big-photo ${selected.email === 'raginikrishnaise@skit.org.in' ? 'faculty-photo-ragini' : selected.email === 'pradheepaise@skit.org.in' ? 'faculty-photo-pradheepa' : selected.email === 'yuvashricise@skit.org.in' ? 'faculty-photo-yuvashri' : selected.email === 'sachindoddamaniise@skit.org.in' ? 'faculty-photo-sachin' : 'faculty-photo-kiran'}`}>{selected.photo_path ? <><img src={selected.photo_path} alt={selected.name} /><span className="photo-wash" /><div className="portrait-label"><span>SKIT · ISE</span><strong>Teachers’ Day 2026</strong></div><div className="portrait-index">05.09.26</div></> : <><div className="initials">{initials(selected.name)}</div><span>YOUR PHOTO WILL APPEAR HERE</span></>}</div>
+        <div className={`big-photo ${selected.email === 'raginikrishnaise@skit.org.in' ? 'faculty-photo-ragini' : selected.email === 'pradheepaise@skit.org.in' ? 'faculty-photo-pradheepa' : selected.email === 'yuvashricise@skit.org.in' ? 'faculty-photo-yuvashri' : selected.email === 'sachindoddamaniise@skit.org.in' ? 'faculty-photo-sachin' : selected.email === 'pamidikiran.ise@skit.org.in' ? 'faculty-photo-kiran' : selected.email === 'pruthvis.ise@skit.org.in' ? 'faculty-photo-pruthvi' : 'faculty-photo-jahnavi'}`}>{selected.photo_path ? <><img src={selected.photo_path} alt={selected.name} /><span className="photo-wash" /><div className="portrait-label"><span>SKIT · ISE</span><strong>Teachers’ Day 2026</strong></div><div className="portrait-index">05.09.26</div></> : <><div className="initials">{initials(selected.name)}</div><span>YOUR PHOTO WILL APPEAR HERE</span></>}</div>
         <div className="profile-copy"><div className="eyebrow">{role === 'faculty' ? 'WELCOME, THIS ONE IS FOR YOU' : 'A SPECIAL MESSAGE FOR YOU'}</div><h2>Thank you for<br/><em>believing in us.</em></h2><div className="profile-meta"><h3>{selected.name}</h3><p>{selected.designation} • {selected.department}</p></div><blockquote>“{selected.personal_message || 'The best teachers leave footprints in our hearts long after the classroom is empty.'}”</blockquote>{role === 'student' ? <div className="appreciate"><button className={myLikes.has(selected.id) ? 'primary liked-btn' : 'primary'} onClick={() => toggleLike(selected)}>♥ {myLikes.has(selected.id) ? 'Appreciated' : 'Appreciate'} <span>{likes[selected.id] || 0}</span></button><span>from the SKIT family</span></div> : <div className="faculty-appreciation"><div className="faculty-heart">♥</div><div><strong>{likes[selected.id] || 0}</strong><span>students appreciated you</span></div></div>}</div>
       </div>
       {role === 'student' && <div className="message-box"><div><div className="eyebrow">LEAVE A NOTE</div><h3>Say something from the heart.</h3><p>Your message will appear instantly on the appreciation wall. ❤️</p></div><textarea value={messageText} onChange={(e) => setMessageText(e.target.value.slice(0, 500))} placeholder="Write a short appreciation message…"/><button className="primary" disabled={sending || !messageText.trim()} onClick={sendMessage}>{sending ? 'Sending…' : 'Send appreciation ♥'}</button></div>}
       <div className={role === 'faculty' ? 'messages-wall faculty-messages-wall' : 'messages-wall'}><div className="eyebrow">{role === 'faculty' ? 'MESSAGES FROM YOUR STUDENTS' : 'APPRECIATION NOTES'}</div>{facultyMessages.length ? facultyMessages.map((m) => <div className="message-card" key={m.id}><span>“</span><p>{m.message}</p><small>{m.student_name ? `From ${m.student_name} • Student` : 'From a student • Student'}</small></div>) : <p className="empty-messages">{role === 'faculty' ? 'Your students’ messages will appear here once they begin leaving their notes.' : `Be the first to leave a note for ${selected.name.split(' ')[1] || 'your mentor'}.`}</p>}</div>
     </section>}
 
-          <section className="royly-tribute">
-        <div className="royly-tribute__eyebrow">A note from a final-year student · ISE 2026</div>
-        <h2>For the teachers who became family. ❤️</h2>
-        <div className="royly-tribute__body">
-          {ROYLY_TEACHERS_DAY_TRIBUTE.split("\n\n").map((paragraph, i) => (
-            <p key={i} className={paragraph === "Maybe that's what a great teacher really does. 💭" ? "royly-tribute__thought" : ""}>
-              {paragraph}
-            </p>
-          ))}
-        </div>
-        <div className="royly-tribute__final">
-          <div className="royly-tribute__quote">
-            “We came to college looking for a future. 🎓<br />Somewhere along the way, we found a family. ❤️🏡”
-          </div>
-          <div className="royly-tribute__signature">— With Love, Royly 💛🌿✨</div>
-        </div>
-      </section>
+          
 
         <section className="family-signature">
       <div className="family-signature__quote">“We came to college looking for a future. 🎓 Somewhere along the way, we found a family. ❤️🏡”</div>

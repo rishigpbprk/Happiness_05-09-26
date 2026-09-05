@@ -5,7 +5,7 @@ A cinematic Teachers' Day experience for Sri Krishna Institute of Technology, In
 ## Included now
 - Premium responsive landing page
 - SKIT college + Silver Jubilee branding
-- Faculty gallery with the 5 supplied faculty records
+- Faculty gallery with the 7 supplied faculty records
 - Faculty profile/reveal screen
 - Interactive like buttons (prototype/local state)
 - Appreciation message UI
@@ -39,7 +39,7 @@ This version uses two authentication paths:
 - Students: Google OAuth, restricted by the application to verified `@skit.org.in` accounts.
 - Faculty: Supabase email/password accounts. Faculty emails must match a row in `public.faculty`.
 
-### Creating the five faculty accounts
+### Creating the seven faculty accounts
 
 In Supabase Dashboard:
 
@@ -57,6 +57,8 @@ Faculty emails:
 - `yuvashricise@skit.org.in`
 - `sachindoddamaniise@skit.org.in`
 - `pamidikiran.ise@skit.org.in`
+- `pruthvis.ise@skit.org.in`
+- `jahnavim.ise@skit.org.in`
 
 Do not store faculty passwords in the `faculty` table or source code. Supabase Auth handles password storage.
 
@@ -76,3 +78,11 @@ Run `supabase-message-live-migration.sql` once in Supabase SQL Editor. The app n
 
 ## Student names + Google login
 Run `supabase-student-name-migration.sql` once in Supabase SQL Editor if the database already exists. New messages store the student's Google display name and show it on the appreciation wall. Student Google login now accepts any Google account; faculty emails are still routed to the faculty email/password login.
+
+## Added two Lab Instructors
+
+Run `supabase-add-two-faculty.sql` once in Supabase SQL Editor to add:
+- Mrs. Pruthvi Sharath — `pruthvis.ise@skit.org.in` — Lab Instructor
+- Ms. Jahnavi M Gowda — `jahnavim.ise@skit.org.in` — Lab Instructor
+
+Their portraits are included in `public/assets/faculty/`. Create their Supabase Auth email/password accounts separately; passwords are never stored in source code or the faculty table.
