@@ -373,44 +373,121 @@ export default function Home() {
       <div className={role === 'faculty' ? 'messages-wall faculty-messages-wall' : 'messages-wall'}><div className="eyebrow">{role === 'faculty' ? 'MESSAGES FROM YOUR STUDENTS' : 'APPRECIATION NOTES'}</div>{facultyMessages.length ? facultyMessages.map((m) => <div className="message-card" key={m.id}><span>“</span><p>{m.message}</p><small>{m.student_name ? `From ${m.student_name} • Student` : 'From a student • Student'}</small></div>) : <p className="empty-messages">{role === 'faculty' ? 'Your students’ messages will appear here once they begin leaving their notes.' : `Be the first to leave a note for ${selected.name.split(' ')[1] || 'your mentor'}.`}</p>}</div>
     </section>}
 
-    <section className="wall family-note">
-  <div className="eyebrow">A NOTE FROM A FINAL-YEAR STUDENT · ISE 2026</div>
+   <section className="family-note">
+  <div className="family-note-card">
 
-  <h3>
-    For the teachers who<br />
-    <em>became family. ❤️</em>
-  </h3>
+    <div className="family-note-top">
+      <span className="family-note-eyebrow">
+        A NOTE FROM A FINAL-YEAR STUDENT · ISE 2026
+      </span>
 
-  <div className="tribute-text">
-    <p>As my final year comes to an end, I find myself looking back at the people who made this journey truly special. 🎓❤️</p>
+      <div className="family-note-star">✦</div>
 
-    <p>College gave us an education, but you gave us a family. 🏡</p>
+      <h2>
+        For the teachers who
+        <br />
+        <em>became family. ❤️</em>
+      </h2>
 
-    <p>You were never just our teachers. 👩‍🏫👨‍🏫 You guided us when we were confused 🧭, encouraged us when we were tired 💪, corrected us when we went wrong 🌱, and celebrated our little victories with us. 🎉</p>
+      <div className="family-note-rule">
+        <span>✦</span>
+      </div>
+    </div>
 
-    <p>And then there were all those moments that were never part of any syllabus — the laughter 😂, random conversations 💬, jokes 😄, teasing 🤭, scoldings 😅, and countless memories that made ISE feel like home. ❤️</p>
+    <div className="tribute-text">
 
-    <p>As we prepare to leave these college gates and begin a new chapter 🌍✨, we may forget some exams, assignments and deadlines... but we'll never forget the people who made these years worth remembering. 🥹❤️</p>
+      <p>
+        As my final year comes to an end, I find myself looking back at
+        the people who made this journey truly special. 🎓💗
+      </p>
 
-    <p>Thank you for believing in us, pushing us forward, putting up with us 😄, and helping us become better versions of ourselves. 🌟</p>
+      <p className="tribute-highlight">
+        College gave us an education, but you gave us a family. 🏡
+      </p>
 
-    <p>Maybe that's what a great teacher does: They don't just teach us what to learn — they become a part of who we become. ❤️</p>
+      <p>
+        You were never just our teachers. 👩‍🏫👨‍🏫 You guided us when we
+        were confused 🧭, encouraged us when we were tired 💪, corrected
+        us when we went wrong 🌱, and celebrated our little victories
+        with us. 🎉
+      </p>
 
-    <p>So, from the bottom of my heart: Thank you for being our teachers, our mentors, our supporters, our companions — and most importantly, our family at college. 🤍🏡</p>
+      <p>
+        And then there were all those moments that were never part of
+        any syllabus — the laughter 😂, random conversations 💬, jokes 😄,
+        teasing 😏, scoldings 😅, and countless memories that made ISE
+        feel like home. ❤️
+      </p>
 
-    <p><strong>Happy Teachers’ Day to the wonderful people who became much more than teachers! 🎉❤️</strong></p>
+      <p>
+        As we prepare to leave these college gates and begin a new
+        chapter 🌍✨, we may forget some exams, assignments and
+        deadlines... but we'll never forget the people who made these
+        years worth remembering. 🥹❤️
+      </p>
 
-    <p>With a heart full of gratitude, happiness, joy and beautiful memories... 😊🥹✨</p>
+      <p>
+        Thank you for believing in us, pushing us forward, putting up
+        with us 😊, and helping us become better versions of ourselves. 🌟
+      </p>
 
-    <p>
-      With Love,<br />
-      <strong>Royly 💛🌿</strong>
-    </p>
+      <div className="teacher-truth">
+        <span className="teacher-truth-icon">💡</span>
+        <div>
+          <strong>Maybe that's what a great teacher does:</strong>
+          <br />
+          <em>
+            They don't just teach us what to learn — they become a part
+            of who we become. ❤️
+          </em>
+        </div>
+      </div>
 
-    <p>
-      Final Year • Information Science & Engineering 🎓💻<br />
-      Sri Krishna Institute of Technology 🏫
-    </p>
+      <p>
+        So, from the bottom of my heart:
+        <br />
+        Thank you for being our teachers, our mentors, our supporters,
+        our companions — and most importantly, our family at college. 🤍🏡
+      </p>
+
+      <p className="tribute-highlight">
+        Happy Teachers’ Day to the wonderful people who became much more
+        than teachers! 🎉❤️
+      </p>
+
+      <p>
+        With a heart full of gratitude, happiness, joy and beautiful
+        memories... 😊🥹✨
+      </p>
+
+    </div>
+
+    <div className="family-note-signature">
+      <div className="signature-line">
+        <span></span>
+        <small>With Love,</small>
+        <span></span>
+      </div>
+
+      <div className="royly-signature">
+        Royly <span>♡</span>
+      </div>
+
+      <div className="signature-details">
+        <div>Final Year · Information Science &amp; Engineering 🎓💻</div>
+        <div>Sri Krishna Institute of Technology 🏫</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div className="family-note-bottom">
+    <span>“</span>
+    <em>
+      We came to college looking for a future. Somewhere along the way,
+      we found a family. ❤️🏡
+    </em>
+    <span>”</span>
   </div>
 </section>          
 

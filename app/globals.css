@@ -231,31 +231,329 @@
 .faculty-photo-jahnavi img { object-position: center 20%; }
 
 
+/* =========================================================
+   FINAL YEAR FAMILY TRIBUTE
+   ========================================================= */
+
 .family-note {
-  margin: 20px 7vw 70px;
+  position: relative;
+  margin: 80px auto 90px;
+  width: min(1050px, calc(100% - 48px));
 }
 
-.tribute-text {
-  max-width: 900px;
-  color: var(--muted);
-  line-height: 1.8;
+.family-note-card {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 82px 58px;
+  border: 1px solid rgba(214, 166, 74, 0.45);
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(218, 170, 73, 0.10),
+      transparent 34%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(17, 46, 36, 0.98),
+      rgba(7, 28, 22, 0.99)
+    );
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.30),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+}
+
+/* Inner decorative frame */
+
+.family-note-card::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(218, 170, 73, 0.13);
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.family-note-card::after {
+  content: "✦";
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  color: rgba(218, 170, 73, 0.38);
   font-size: 15px;
 }
 
+/* Heading */
+
+.family-note-top {
+  position: relative;
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.family-note-eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: #dcae55;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.family-note-star {
+  color: #e3b75f;
+  font-size: 15px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.family-note-top h2 {
+  margin: 0;
+  color: #f5edda;
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  font-weight: 500;
+}
+
+.family-note-top h2 em {
+  color: #ddb05a;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.family-note-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+  color: #dcae55;
+}
+
+.family-note-rule::before,
+.family-note-rule::after {
+  content: "";
+  width: 90px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(218, 170, 73, 0.55)
+  );
+}
+
+.family-note-rule::after {
+  background: linear-gradient(
+    90deg,
+    rgba(218, 170, 73, 0.55),
+    transparent
+  );
+}
+
+/* Message */
+
+.tribute-text {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  color: rgba(244, 239, 224, 0.84);
+  font-size: 16px;
+  line-height: 1.85;
+  text-align: center;
+}
+
 .tribute-text p {
-  margin: 0 0 18px;
+  margin: 0 0 25px;
 }
 
-.tribute-text strong {
-  color: var(--cream);
+.tribute-highlight {
+  color: #f0b7a7;
+  font-size: 17px;
+  font-weight: 700;
 }
 
-@media (max-width: 600px) {
+/* Teacher quote */
+
+.teacher-truth {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 32px auto;
+  padding: 20px 26px;
+  border: 1px solid rgba(218, 170, 73, 0.48);
+  border-radius: 14px;
+  background: rgba(218, 170, 73, 0.055);
+  color: #e7bd65;
+  text-align: left;
+}
+
+.teacher-truth-icon {
+  flex-shrink: 0;
+  font-size: 25px;
+}
+
+.teacher-truth strong {
+  color: #e9bb5b;
+  font-size: 16px;
+}
+
+.teacher-truth em {
+  color: #e8d8b7;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Signature */
+
+.family-note-signature {
+  position: relative;
+  text-align: center;
+  margin-top: 42px;
+}
+
+.signature-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.signature-line span {
+  width: 95px;
+  height: 1px;
+  background: rgba(218, 170, 73, 0.28);
+}
+
+.signature-line small {
+  color: rgba(244, 239, 224, 0.68);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+.royly-signature {
+  color: #f4a4cb;
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: clamp(42px, 5vw, 60px);
+  line-height: 1.1;
+  text-shadow: 0 0 25px rgba(244, 164, 203, 0.18);
+}
+
+.royly-signature span {
+  color: #f09fc9;
+  font-size: 32px;
+}
+
+.signature-details {
+  margin-top: 12px;
+  color: rgba(206, 190, 151, 0.72);
+  font-size: 12px;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+}
+
+/* Bottom family statement */
+
+.family-note-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: min(900px, calc(100% - 50px));
+  margin: 26px auto 0;
+  padding: 20px 30px;
+  border: 1px solid rgba(218, 170, 73, 0.25);
+  border-radius: 18px;
+  background: rgba(8, 27, 22, 0.72);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.20);
+  color: rgba(244, 239, 224, 0.84);
+  text-align: center;
+}
+
+.family-note-bottom span {
+  color: #e8b65b;
+  font-family: Georgia, serif;
+  font-size: 35px;
+  line-height: 1;
+}
+
+.family-note-bottom em {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
   .family-note {
-    margin: 10px 20px 50px;
+    width: calc(100% - 28px);
+    margin: 55px auto 65px;
+  }
+
+  .family-note-card {
+    padding: 45px 24px 40px;
+    border-radius: 22px;
+  }
+
+  .family-note-card::before {
+    inset: 8px;
+    border-radius: 16px;
+  }
+
+  .family-note-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+  }
+
+  .family-note-top h2 {
+    font-size: 39px;
+  }
+
+  .family-note-rule {
+    margin-top: 22px;
+  }
+
+  .family-note-rule::before,
+  .family-note-rule::after {
+    width: 50px;
   }
 
   .tribute-text {
     font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .tribute-highlight {
+    font-size: 15px;
+  }
+
+  .teacher-truth {
+    padding: 17px 18px;
+    gap: 12px;
+  }
+
+  .teacher-truth em {
+    font-size: 13px;
+  }
+
+  .signature-line span {
+    width: 55px;
+  }
+
+  .family-note-bottom {
+    width: calc(100% - 28px);
+    padding: 18px 20px;
+    gap: 10px;
+  }
+
+  .family-note-bottom span {
+    font-size: 27px;
+  }
+
+  .family-note-bottom em {
+    font-size: 13px;
   }
 }
