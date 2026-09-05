@@ -229,3 +229,33 @@
 /* Additional faculty portrait treatments */
 .faculty-photo-pruthvi img,
 .faculty-photo-jahnavi img { object-position: center 20%; }
+
+
+.family-note {
+  margin: 20px 7vw 70px;
+}
+
+.tribute-text {
+  max-width: 900px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.tribute-text p {
+  margin: 0 0 18px;
+}
+
+.tribute-text strong {
+  color: var(--cream);
+}
+
+@media (max-width: 600px) {
+  .family-note {
+    margin: 10px 20px 50px;
+  }
+
+  .tribute-text {
+    font-size: 14px;
+  }
+}
